@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, roc_curve, f1_score
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
 
 data_bunch = load_breast_cancer()
 print(data_bunch.keys())
@@ -60,3 +61,5 @@ plt.ylabel("Taux de vrais positifs (TPR)")
 plt.title("Courbe ROC")
 plt.legend()
 plt.show()
+
+print(classification_report(y_test, y_pred))
